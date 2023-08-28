@@ -35,6 +35,8 @@ jobs:
     - name: Build with Gradle
       run: |
         ./gradlew build
+        cp ./build/libs/my-app-1.0-SNAPSHOT.jar ${{ github.workspace }}/
+        ll ${{ github.workspace }}
         pwd
 
     - name: Build and Push Docker Image
