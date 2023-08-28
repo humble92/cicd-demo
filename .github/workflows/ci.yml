@@ -33,11 +33,7 @@ jobs:
       run: chmod +x gradlew
 
     - name: Build with Gradle
-      run: |
-        ./gradlew build
-        cp ./build/libs/my-app-1.0-SNAPSHOT.jar ${{ github.workspace }}/
-        ll ${{ github.workspace }}
-        pwd
+      run: ./gradlew build
 
     - name: Build and Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v6
